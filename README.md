@@ -1,6 +1,7 @@
 # PorcineSow-HR-HP-MiniDemo
 
 [![CI](https://github.com/zengzhengcheng/PorcineSow-HR-HP-MiniDemo/actions/workflows/ci.yml/badge.svg)](https://github.com/zengzhengcheng/PorcineSow-HR-HP-MiniDemo/actions)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20286632.svg)](https://doi.org/10.5281/zenodo.20286632)
 [![License](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Data License](https://img.shields.io/badge/data-CC--BY--4.0-lightgrey.svg)](DATA_LICENSE)
 
@@ -91,8 +92,11 @@ permutation-importance plot averaged across folds is written to
 
 ## Citation
 
-Please cite the archived Zenodo release once the DOI is assigned (badge above).
-Until then, see `CITATION.cff` for full metadata.
+Please cite the archived Zenodo release:
+DOI [10.5281/zenodo.20286633](https://doi.org/10.5281/zenodo.20286633)
+(version 1.0.0; concept DOI
+[10.5281/zenodo.20286632](https://doi.org/10.5281/zenodo.20286632) tracks
+all versions). Full metadata in `CITATION.cff`.
 
 ## Related projects
 
@@ -155,7 +159,11 @@ python code/train_baseline.py --config code/config_baseline.yaml
 
 ### 引用
 
-请引用 Zenodo 归档版本（DOI 待第一次 release 后回填到 `CITATION.cff`）。
+请引用 Zenodo 归档版本：DOI
+[10.5281/zenodo.20286633](https://doi.org/10.5281/zenodo.20286633)
+（v1.0.0；concept DOI
+[10.5281/zenodo.20286632](https://doi.org/10.5281/zenodo.20286632) 指向最新版）。
+完整元数据见 `CITATION.cff`。
 
 ### 许可
 

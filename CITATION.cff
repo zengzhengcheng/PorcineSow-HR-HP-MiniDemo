@@ -27,8 +27,11 @@ authors:
     orcid: "https://orcid.org/0000-0001-5435-2640"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.XXXXXXX
-    description: "Zenodo software + data archive (replace after first release)"
+    value: 10.5281/zenodo.20286633
+    description: "Zenodo software + data archive (v1.0.0)"
+  - type: doi
+    value: 10.5281/zenodo.20286632
+    description: "Zenodo concept DOI (all versions)"
 license: MIT
 license-url: "https://opensource.org/licenses/MIT"
 repository-code: "https://github.com/zengzhengcheng/PorcineSow-HR-HP-MiniDemo"
