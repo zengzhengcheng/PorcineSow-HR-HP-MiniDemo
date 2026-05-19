@@ -1,0 +1,49 @@
+cff-version: 1.2.0
+message: "If you use this dataset and code, please cite the archived Zenodo release."
+type: software
+title: "PorcineSow-HR-HP-MiniDemo: minimal data and baseline for 5-min heat production prediction in pregnant sows"
+abstract: >
+  A minimal reproducibility kit pairing 5-min heart-rate-derived and motion
+  features with indirect-calorimetry heat production on pregnant sows, with
+  a gradient-boosted tree baseline and 5-fold cross-validation.
+authors:
+  - family-names: Zeng
+    given-names: Zhengcheng
+    email: zengzhengcheng@cau.edu.cn
+    affiliation: "China Agricultural University, College of Animal Science and Technology"
+    orcid: "https://orcid.org/0009-0007-6385-0458"
+  - family-names: Lei
+    given-names: Zhenyu
+    email: leizhenyu@cau.edu.cn
+    affiliation: "China Agricultural University, College of Animal Science and Technology"
+  - family-names: Gao
+    given-names: Yuyu
+    email: gaoyuyu@cau.edu.cn
+    affiliation: "China Agricultural University, College of Animal Science and Technology"
+  - family-names: Zhang
+    given-names: Shuai
+    email: zhangshuai16@cau.edu.cn
+    affiliation: "China Agricultural University, College of Animal Science and Technology"
+    orcid: "https://orcid.org/0000-0001-5435-2640"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.XXXXXXX
+    description: "Zenodo software + data archive (replace after first release)"
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
+repository-code: "https://github.com/zengzhengcheng/PorcineSow-HR-HP-MiniDemo"
+url: "https://github.com/zengzhengcheng/PorcineSow-HR-HP-MiniDemo"
+version: "1.0.0"
+date-released: "2026-05-19"
+keywords:
+  - pregnant sow
+  - heart rate
+  - heart rate variability
+  - heat production
+  - net energy
+  - precision livestock farming
+  - wearable sensor
+contact:
+  - email: zhangshuai16@cau.edu.cn
+    family-names: Zhang
+    given-names: Shuai

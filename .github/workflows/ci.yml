@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Verify dataset checksum
+        run: |
+          cd data
+          sha256sum -c sha256sums.txt
+      - name: Run baseline
+        run: python code/train_baseline.py --config code/config_baseline.yaml
+      - name: Show summary
+        run: cat results/cv_summary.md
+      - name: Sanity check R^2
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          df = pd.read_csv("results/cv_summary.csv")
+          r2 = df["r2"].mean()
+          print(f"mean R^2 = {r2:.4f}")
+          assert 0.74 <= r2 <= 0.85, f"R^2 out of expected range: {r2}"
+          PY
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-results
+          path: results/

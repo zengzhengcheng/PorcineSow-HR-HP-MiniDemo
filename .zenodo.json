@@ -1,0 +1,56 @@
+{
+  "title": "PorcineSow-HR-HP-MiniDemo: minimal data and baseline for 5-min heat production prediction in pregnant sows",
+  "upload_type": "software",
+  "language": "eng",
+  "description": "<p>Companion software and minimal feature dataset for a short paper section on predicting 5-min heat production (HP, kcal/5 min) in pregnant sows from heart-rate-derived metrics, inertial activity statistics, and body weight. The repository ships 24,139 five-minute windows from 14 sows, a 12-feature schema, and a single-config gradient-boosted-tree baseline that reproduces a 5-fold random-shuffle cross-validation R^2 of about 0.79 (MAE about 2.3 kcal/5 min).</p>",
+  "creators": [
+    {
+      "name": "Zeng, Zhengcheng",
+      "affiliation": "China Agricultural University",
+      "orcid": "0009-0007-6385-0458"
+    },
+    {
+      "name": "Lei, Zhenyu",
+      "affiliation": "China Agricultural University"
+    },
+    {
+      "name": "Gao, Yuyu",
+      "affiliation": "China Agricultural University"
+    },
+    {
+      "name": "Zhang, Shuai",
+      "affiliation": "China Agricultural University",
+      "orcid": "0000-0001-5435-2640"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Zhang, Shuai",
+      "affiliation": "China Agricultural University",
+      "orcid": "0000-0001-5435-2640",
+      "type": "ContactPerson"
+    }
+  ],
+  "keywords": [
+    "pregnant sow",
+    "heart rate",
+    "heart rate variability",
+    "heat production",
+    "net energy",
+    "machine learning",
+    "precision livestock farming",
+    "wearable sensor"
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/zengzhengcheng/PorcineSow-HR-HP-MiniDemo",
+      "relation": "isSupplementTo",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ],
+  "communities": [],
+  "version": "1.0.0"
+}
