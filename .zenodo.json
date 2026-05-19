@@ -2,7 +2,7 @@
   "title": "PorcineSow-HR-HP-MiniDemo: minimal data and baseline for 5-min heat production prediction in pregnant sows",
   "upload_type": "software",
   "language": "eng",
-  "description": "<p>Companion software and minimal feature dataset for a short paper section on predicting 5-min heat production (HP, kcal/5 min) in pregnant sows from heart-rate-derived metrics, inertial activity statistics, and body weight. The repository ships 24,139 five-minute windows from 14 sows, a 12-feature schema, and a single-config gradient-boosted-tree baseline that reproduces a 5-fold random-shuffle cross-validation R^2 of about 0.79 (MAE about 2.3 kcal/5 min).</p>",
+  "description": "<p>Companion software and minimal feature dataset for a short paper section on predicting 5-min heat production (HP, kcal/5 min) in pregnant sows from heart-rate-derived metrics, inertial activity statistics, and body weight. The repository ships 24,066 five-minute windows from 14 sows (target trimmed to 11-70 kcal/5 min to stabilise the regression target, removing chamber transients on the low end and a small number of windows above the observed cohort range on the high end), a 12-feature schema, and a single-config gradient-boosted-tree baseline that reproduces a 5-fold random-shuffle cross-validation R^2 of about 0.81 (MAE about 2.3 kcal/5 min).</p>",
   "creators": [
     {
       "name": "Zeng, Zhengcheng",

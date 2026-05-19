@@ -61,7 +61,7 @@ python code/train_baseline.py \
 
 `results/cv_summary.csv` and `results/cv_summary.md` will be (re)written. With
 the shipped data and `random_state=42` on a recent scikit-learn (1.3+) the
-expected mean R^2 is **0.79 +/- 0.01** and the expected mean MAE is **2.31
+expected mean R^2 is **0.81 +/- 0.01** and the expected mean MAE is **2.27
 kcal / 5 min**. Small deviations (third decimal of R^2) across minor
 scikit-learn versions are normal.
 

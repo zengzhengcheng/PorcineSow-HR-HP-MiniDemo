@@ -12,7 +12,7 @@ below).
 
 ## What you get
 
-- `data/sow_features_minimal.csv` - 24,139 five-minute windows from 14 sows,
+- `data/sow_features_minimal.csv` - 24,066 five-minute windows from 14 sows,
   12 features + 1 target, fully anonymised.
 - `code/train_baseline.py` - single-config 5-fold cross-validation training
   script using `sklearn.HistGradientBoostingRegressor`.
@@ -37,8 +37,8 @@ python code/train_baseline.py --config code/config_baseline.yaml
 Expected output (5-fold KFold, shuffle, seed = 42):
 
 ```
-5-fold R^2 : 0.79  +/- 0.01
-5-fold MAE : 2.31  kcal / 5 min
+5-fold R^2 : 0.81  +/- 0.01
+5-fold MAE : 2.27  kcal / 5 min
 ```
 
 Exact fold-level values are in `results/cv_summary.csv` and `results/cv_summary.md`.
@@ -66,7 +66,12 @@ dictionary in `data/DATA_README.md`.
 
 The data is pre-filtered to `hr_valid == 1` and `move_coverage >= 0.5` from
 an upstream feature table; those quality gates are not retained as columns
-since they are constant or near-constant on the kept rows.
+since they are constant or near-constant on the kept rows. A trim
+`11 <= hp_kcal_5min <= 70` kcal / 5 min is then applied to the target to
+stabilise the regression target (removes 0.30% of rows that correspond to
+chamber transients on the low end and a small number of windows above the
+typical HP range observed in this cohort on the high end; see
+`data/DATA_README.md` for details).
 
 ## Method
 
@@ -125,10 +130,13 @@ Agricultural University, Beijing, China.
 
 ### 数据
 
-`data/sow_features_minimal.csv`：14 头母猪的 24,139 个 5 分钟窗口，含心率衍生
+`data/sow_features_minimal.csv`：14 头母猪的 24,066 个 5 分钟窗口，含心率衍生
 （4 列）、运动统计（5 列）、体重、时段上下文（共 12 个特征）+ 1 个目标
 `hp_kcal_5min`（kcal/5 min）。窗口已按 `hr_valid == 1` 与 `move_coverage >= 0.5`
-预筛过；母猪编号已匿名为 `S01..S14`，时间戳替换为相对秒，原始小室与日期不保留。
+预筛过，并对目标做了范围修剪 `11 ≤ hp_kcal_5min ≤ 70` kcal/5 min 以稳定回归目标
+（剔除 0.30%，低端为小室门启闭瞬变，高端为少数超出本队列典型 HP 范围的窗口，
+详见 `data/DATA_README.md`）。母猪编号已匿名为 `S01..S14`，时间戳替换为相对秒，
+原始小室与日期不保留。
 
 ### 快速复现
 
@@ -138,7 +146,7 @@ conda activate sow-mini
 python code/train_baseline.py --config code/config_baseline.yaml
 ```
 
-预期 5-fold 交叉验证 R² 约 0.79，MAE 约 2.31 kcal/(5 min)。
+预期 5-fold 交叉验证 R² 约 0.81，MAE 约 2.27 kcal/(5 min)。
 
 ### 模型
 

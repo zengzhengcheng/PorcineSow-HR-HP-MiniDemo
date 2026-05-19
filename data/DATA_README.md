@@ -4,7 +4,7 @@
 
 | file | rows | columns | size |
 |---|---|---|---|
-| `sow_features_minimal.csv` | 24,139 | 17 | ~5.2 MB |
+| `sow_features_minimal.csv` | 24,066 | 17 | ~5.2 MB |
 | `sha256sums.txt` | 1 | 2 | < 1 KB |
 
 `sha256sums.txt` contains a single line `<hex>  sow_features_minimal.csv`
@@ -28,6 +28,14 @@ Quality gating was applied upstream:
 
 These quality flags are not retained as columns because after filtering they
 are constant or near-constant.
+
+A physiological-range trim was then applied to the target:
+`11 <= hp_kcal_5min <= 70` kcal / 5 min. The lower bound removes 18 windows
+near zero plus a small cluster below 11 kcal that correspond to chamber
+transients (door opens for feeding or cleaning, gas-analyser stabilisation
+after period change); the upper bound removes 5 windows above 70 kcal that
+lie above the typical HP range observed in this cohort under steady-state
+recording. The trim drops 73 of 24,139 rows (0.302%).
 
 ## Anonymisation
 
@@ -70,7 +78,7 @@ windows on a given (animal, date).
 ```python
 import pandas as pd
 df = pd.read_csv("data/sow_features_minimal.csv")
-print(df.shape)                    # (24139, 17)
+print(df.shape)                    # (24066, 17)
 print(df["animal_id"].nunique())   # 14
 ```
 
